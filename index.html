@@ -49,13 +49,21 @@
 
   /* Big buttons */
   .menu { display: grid; gap: 18px; grid-template-columns: repeat(2, 1fr); padding: 36px 0 12px; }
-  @media (min-width: 860px) { .menu { grid-template-columns: repeat(4, 1fr); } }
+  @media (min-width: 860px) { .menu { grid-template-columns: repeat(5, 1fr); } }
+  .menu a.b-sky { grid-column: 1 / -1; }
+  @media (min-width: 860px) { .menu a.b-sky { grid-column: auto; } }
   .menu a { min-height: 130px; border-radius: 22px; display: flex; align-items: flex-end; padding: 16px 20px; font-weight: 600; font-size: 1.5rem; line-height: 1.15; text-decoration: none; color: var(--ink); box-shadow: inset 0 -8px 0 rgba(0,0,0,.08); }
   .menu a:hover { transform: translateY(-2px); }
   .b-red { background: var(--red); color: #fff !important; }
   .b-sun { background: var(--sun); }
   .b-grass { background: var(--grass); }
   .b-blush { background: var(--blush); }
+  .b-sky { background: var(--sky); }
+  .game-card { display: block; max-width: 640px; text-decoration: none; color: var(--ink); }
+  .game-card img { display: block; width: 100%; height: auto; border-radius: 22px; border: 6px solid #fff; box-shadow: 0 14px 24px -16px rgba(42,30,30,.5); }
+  .game-card:hover img { transform: translateY(-3px); }
+  .game-card b { display: inline-block; margin-top: 14px; background: var(--red); color: #fff; padding: 12px 26px; border-radius: 999px; font-weight: 600; font-size: 1.4rem; }
+  .game-card p { margin: 10px 0 0; color: var(--soft); }
 
   /* Sections */
   section { padding: 60px 0; border-top: 3px dashed rgba(214,40,40,.18); scroll-margin-top: 12px; }
@@ -119,11 +127,22 @@
 
   <main class="wrap">
     <nav class="menu" aria-label="Jack's site">
+      <a class="b-sky" href="#games">Games</a>
       <a class="b-red" href="#drawings">My drawings</a>
       <a class="b-sun" href="#photos">Photos</a>
       <a class="b-grass" href="#says">Things Jack says</a>
       <a class="b-blush" href="#favorites">Favorite things</a>
     </nav>
+
+    <section id="games" aria-labelledby="h-games">
+      <div class="sec-head"><span class="dot" style="background:var(--sky)" aria-hidden="true"></span><h2 id="h-games">Games</h2></div>
+      <a class="game-card" href="games/jacks-town/">
+        <img src="games/jacks-town/preview.png" alt="Jack's Town: a play mat town with roads, a red car, an ice cream shop, a fire station, a farm and a race track" width="1200" height="740" loading="lazy">
+        <b>Play Jack's Town</b>
+        <p>Drive around town, collect coins, buy ice cream cones, and go on missions from HQ.</p>
+      </a>
+      <a class="back" href="#top">Back to the top</a>
+    </section>
 
     <section id="drawings" aria-labelledby="h-drawings">
       <div class="sec-head"><span class="dot" style="background:var(--red)" aria-hidden="true"></span><h2 id="h-drawings">My drawings</h2></div>
